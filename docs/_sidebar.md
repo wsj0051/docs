@@ -1,0 +1,8 @@
+- [主页](home.md)
+- **linux**
+	- [树莓派](linux/raspberry.md)   
+	- [dpkg](linux/dpkg.md)   
+	- [useradd](linux/useradd.md)   
+	- [cat](linux/cat.md)    
+	- [sed](linux/sed.md)
+- [个人笔记](notes/readme.md)
