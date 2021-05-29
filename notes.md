@@ -1,11 +1,12 @@
 # 个人笔记
 ## Jenkins
 1. 插件下载地址
-- [hpi插件地址](http://updates.jenkins-ci.org/latest/)
-- [Theme插件](http://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
+ - [hpi插件地址](http://updates.jenkins-ci.org/latest/)
+ - [Theme插件](http://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
 
 2. 页面自定义
 修改jar包`jenkins/WEB-INF/lib/jenkins-core-1.651.3.jar`文件中的`lib/layout/layout.jelly`
+
 ## termux 
 1. 修改快捷键`vi ~/.termux/termux.properties`
 ```
@@ -15,6 +16,7 @@ extra-keys = [ \
     ['CTRL','FN','ALT','|','-','+','QUOTE','LEFT','DOWN','RIGHT','PGDN'] \
     ]
 ```
+
 ## github加速
 1. 油猴脚本工具
 - 加速访问脚本地址：https://greasyfork.org/zh-CN/scripts/397419
