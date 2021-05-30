@@ -1,8 +1,8 @@
 # 个人笔记
 ## Jenkins
 1. 插件下载地址
-- [hpi插件地址](http://updates.jenkins-ci.org/latest/)
-- [Theme插件](http://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
+ - [hpi插件地址](http://updates.jenkins-ci.org/latest/)
+ - [Theme插件](http://wiki.jenkins-ci.org/display/JENKINS/Simple+Theme+Plugin)
 
 2. 页面自定义
 修改jar包`jenkins/WEB-INF/lib/jenkins-core-1.651.3.jar`文件中的`lib/layout/layout.jelly`
