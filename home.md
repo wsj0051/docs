@@ -1,4 +1,5 @@
 # 主页
-wsj0051的文档
-## 生成方式 {docsify-ignore}
-[生成器](https://docsify.js.org/)
+## wsj0051的文档{docsify-ignore}
+1. 树莓派
+2. linux
+2. 个人笔记
