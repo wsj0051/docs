@@ -30,10 +30,10 @@ jobs:
       run: |
         cd ${PROJ_PATH}/
         rm -rf .git/
-        git config user.email "wsj0051@163.com" 
-        git config user.name "wsj0051" 
         git init
         echo "init操作成功"
+        git config user.email "wsj0051@163.com" 
+        git config user.name "wsj0051" 
         git remote add origin ${GITEE_REPO}
         echo "add操作成功"
         git add . 
