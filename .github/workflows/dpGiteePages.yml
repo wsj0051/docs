@@ -1,4 +1,4 @@
-name: build GitBook & deploy to gitee
+name: deploy docs to gitee
 
 on:
   workflow_dispatch:
@@ -29,10 +29,11 @@ jobs:
       
       run: |
         cd ${PROJ_PATH}/
+        rm -rf .git/
         git config user.email "wsj0051@163.com" 
         git config user.name "wsj0051" 
-        git remote rm origin
-        echo "rm操作成功"
+        git init
+        echo "init操作成功"
         git remote add origin ${GITEE_REPO}
         echo "add操作成功"
         git add . 
