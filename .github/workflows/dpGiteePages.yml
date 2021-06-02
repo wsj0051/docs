@@ -31,11 +31,10 @@ jobs:
       
       run: |
         cd ${PROJ_PATH}/
-        git init 
         git config user.email "wsj0051@163.com" 
         git config user.name "wsj0051" 
+        git remote rm origin
         git remote add origin ${GITEE_REPO}
-        echo remote
         git add . 
         git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages" 
         git push origin master -f
