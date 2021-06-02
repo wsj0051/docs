@@ -1,14 +1,12 @@
 name: build GitBook & deploy to gitee
 
 on:
-  push:
-    branches: [ master ]
-    paths: 
-          - README.md
+  workflow_dispatch:
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     - uses: actions/checkout@v2         
@@ -34,7 +32,9 @@ jobs:
         git config user.email "wsj0051@163.com" 
         git config user.name "wsj0051" 
         git remote rm origin
+        echo "rm操作成功"
         git remote add origin ${GITEE_REPO}
+        echo "add操作成功"
         git add . 
         git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages" 
         git push origin master -f
