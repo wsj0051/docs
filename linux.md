@@ -1,4 +1,4 @@
-# linux
+# linux命令
 ## cat命令
 ### 参数说明
 - -n 或 --number：由 1 开始对所有输出的行数编号。
@@ -426,3 +426,34 @@ usermod -s /bin/bash wsj0051
 其他
 
 ![笔记](https://gitee.com/wsj0051/pic/raw/master/img/usermod.png)
+  
+## echo
+echo指令可以输出内容到标准输出，以空白分割字符串，并且后面增加换行。此命令的适用范围：RedHat、RHEL、Ubuntu、CentOS、Fedora。
+### 语法
+```
+echo [-neE]  [arg ...]
+```
+### 选项列表
+| 选项 | 说明                                                         |
+| ---- | ------------------------------------------------------------ |
+| -n   | 输出字符串不换行                                             |
+| -e   | 处理某些特殊字符<br />\a 蜂鸣警报<br />\b 删除前一个字符<br />\c 最后不加换行<br />\e 输出esc字符<br/ >\f 换行，光标停在原处<br />\n 换行<br />\r 光标移动到首行，不换行<br />\t 水平tab<br />\v 垂直tab<br />\\\ 输出\\<br />\0nnn 八进制nnn代表的ASCII字符<br />\xHH 十六进制数HH代表的ASCII字符<br /> |
+|  -E    |禁用转义解释|
+### 实例
+```
+[root@localhost ~]# echo -e "hello\fworld"              //必须使用-e选项，\f换行之后，光标还在结尾
+
+hello
+
+     world
+```
+原样输出
+```
+echo '$name\"'
+```  
+输出结果：`$name\"`  
+`echo `date``打印时间
+结果定向至文件
+```
+echo "It is a test" > myfile
+```
