@@ -451,8 +451,11 @@ hello
 ```
 echo '$name\"'
 ```  
-输出结果：`$name\"`  
-`echo `date``打印时间
+输出结果：`$name\"`    
+打印时间：
+```
+echo `date`
+```
 结果定向至文件
 ```
 echo "It is a test" > myfile
