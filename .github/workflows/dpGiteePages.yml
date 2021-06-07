@@ -27,16 +27,15 @@ jobs:
       
       run: |
         cd ${PROJ_PATH}/
-        #rm -rf .git/
-        #git init
-        git remote rm origin
+        rm -rf .git/
+        git init
         git remote add origin ${GITEE_REPO}
         git config --global user.email "wsj0051@163.com" 
         git config --global user.name "wsj0051"         
-        //git add . 
-        //git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages" 
-        git push --set-upstream  origin master -f  
-          
+        git add .
+        git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+        git push origin master -f  
+               
     - name: Build Gitee Pages
       uses: yanglbme/gitee-pages-action@main
       with:
