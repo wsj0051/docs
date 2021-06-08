@@ -19,3 +19,32 @@
 - 国内可访问Chrome安装地址1：https://chrome.zzzmh.cn/info?token=mfnkflidjnladnkldfonnaicljppahpg
 - 国内可访问Chrome安装地址2：https://www.extfans.com/productivity/mfnkflidjnladnkldfonnaicljppahpg/
 - Edge安装地址：https://microsoftedge.microsoft.com/addons/detail/ljceflkaahacpphaioldeledefadpmdp
+## npm
+1. 设置代理，用户名密码
+```
+npm config set proxy http://username:password@server:port
+npm confit set https-proxy http://username:password@server:port
+```
+2. 取消代理
+```
+npm config delete proxy
+npm config delete https-proxy
+```
+3. cnpm
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+## nvm
+```
+cd ~/
+git clone https://github.com/nvm-sh/nvm.git .nvm
+cd ~/.nvm
+. ./nvm.sh
+```
+### 修改环境变量  
+修改文件 `~/.bashrc`, `~/.profile`, or `~/.zshrc`末尾配置环境变量
+```
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
