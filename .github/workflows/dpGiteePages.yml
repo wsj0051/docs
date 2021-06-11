@@ -20,7 +20,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
         
-    - name: Push docs to Gitee
+    - name: 1. Push docs to Gitee
       env: 
         PROJ_PATH: ${{github.workspace}} 
         GITEE_REPO: git@gitee.com:wsj0051/wsj0051.git
@@ -28,15 +28,16 @@ jobs:
       run: |
         cd ${PROJ_PATH}/
         rm -rf .git/
+        rm -rf .github/
         git init
         git remote add origin ${GITEE_REPO}
         git config --global user.email "wsj0051@163.com" 
         git config --global user.name "wsj0051"         
         git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
-        git push origin master -f  
+        git push --force --quiet origin master 
                
-    - name: Build Gitee Pages
+    - name: 2. Build Gitee Pages
       uses: yanglbme/gitee-pages-action@main
       with:
           # 注意替换为你的 Gitee 用户名
