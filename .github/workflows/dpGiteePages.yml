@@ -20,15 +20,17 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
         
-    - name: 1. Push docs to Gitee
+    - name: 1. Push docs to Gitee & Gitlab
       env: 
         PROJ_PATH: ${{github.workspace}} 
         GITEE_REPO: git@gitee.com:wsj0051/wsj0051.git
-      
+        GIT_LAB: git@gitlab.com:wsj0051/wsj0051.gitlab.io.git
       run: |
         cd ${PROJ_PATH}/
-        rm -rf .git/
-        rm -rf .github/
+        mkdir -p ~/wsj0051
+        rm -rf .github/ .git/
+        git clone ${GIT_LAB} ~/wsj0051/docs
+        cp -r ./*  ~/wsj0051/docs/public
         git init
         git remote add origin ${GITEE_REPO}
         git config --global user.email "wsj0051@163.com" 
@@ -36,8 +38,13 @@ jobs:
         git add .
         git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
         git push --force --quiet origin master 
-               
-    - name: 2. Build Gitee Pages
+        cd ~/wsj0051/docs/
+        git add .
+        git commit -m "GitHub Actions Auto Builder at $(date +'%Y-%m-%d %H:%M:%S')"
+        git push --force --quiet origin master 
+        
+        
+    - name: 3. Deploy Gitee Pages
       uses: yanglbme/gitee-pages-action@main
       with:
           # 注意替换为你的 Gitee 用户名
