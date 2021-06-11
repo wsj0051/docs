@@ -1,4 +1,4 @@
-name: deploy docs to gitee
+name: deploy docs to gitee & gitlab
 
 on:
   workflow_dispatch:
