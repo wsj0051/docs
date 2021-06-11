@@ -30,6 +30,7 @@ jobs:
         mkdir -p ~/wsj0051
         rm -rf .github/ .git/
         git clone ${GIT_LAB} ~/wsj0051/docs
+        rm -rf  ~/wsj0051/docs/public/*
         cp -r ./*  ~/wsj0051/docs/public
         git init
         git remote add origin ${GITEE_REPO}
