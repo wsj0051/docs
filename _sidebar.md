@@ -1,4 +1,4 @@
-* [说明](index.md)
+* [说明](home.md)
 * I Linux命令
 	* [dpkg](linux/dpkg.md)   
 	* [useradd](linux/useradd.md)   
