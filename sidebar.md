@@ -1,4 +1,0 @@
-- [主页](home.md)
-- [树莓派](raspberry.md)
-- [linux](linux.md)
-- [个人笔记](notes.md)
